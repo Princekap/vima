@@ -1,5 +1,5 @@
 # User-Management-PHP-MYSQL
- User managent system developed for and NGO company.
+ User managent system developed for an NGO company.
 
  All credit going to the originator of this template I have added to #Ajay Randhawa
  Thanks

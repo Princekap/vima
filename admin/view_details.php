@@ -224,14 +224,14 @@ while (strtotime('+1 MONTH', $date1) < $date2) {
 											    <td id="aliveparents"><?php  echo $row->parentsalive;?></td>
 												<th scope>Benefit</th>
 											    <td>
-												<?php if(($date1 > $date2) && $date2 > 0 ){echo'(ENDED)';}else{echo'(IN PROGRESS)';};
+												<?php if(($date1 >= $date2) && $date2 > 0 ){echo'(ENDED)';}else{echo'(IN PROGRESS)';};
 												?></td>
 											  </tr>
 											  <tr>
 											    <th scope>Benefit From</th>
 											    <td><?php  echo $row->benefitfrom;?></td>
 												<th scope>Benefit End Date</th>
-											    <td ><?php echo $row->benefitto;?></td>
+											    <td ><?php if($date2 > 0 ){echo $row->benefitto;}else{echo'(Not Set)';}?></td>
 											  </tr>
 											</table>
 											<table border="1"  id="fatherdisplay" class="table table-bordered motherclass">
