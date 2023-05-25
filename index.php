@@ -49,12 +49,12 @@ echo "<script type='text/javascript'> document.location = 'profile.php'; </scrip
 </head>
 
 <body>
-	<div class="login-page bk-img">
+<div class="login-page bk-img" style="background-image: url(includes/image.jpeg);">
 		<div class="form-content">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-6 col-md-offset-3">
-						<h1 class="text-center text-bold mt-4x">Login</h1>
+						<h1 class="text-center text-bold mt-4x" style="color:#fff;">Login</h1>
 						<div class="well row pt-2x pb-3x bk-light">
 							<div class="col-md-8 col-md-offset-2">
 								<form method="post">

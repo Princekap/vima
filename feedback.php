@@ -8,12 +8,14 @@ header('location:index.php');
 }
 else{
 	
+	$unique = substr(uniqid(rand(), true), 16, 3);
+
 if(isset($_POST['submit']))
   {	
 	$file = $_FILES['attachment']['name'];
 	$file_loc = $_FILES['attachment']['tmp_name'];
 	$folder="attachment/";
-	$new_file_name = strtolower($file);
+	$new_file_name = $unique.'_'.strtolower($file);
 	$final_file=str_replace(' ','-',$new_file_name);
 	
 	$title=$_POST['title'];

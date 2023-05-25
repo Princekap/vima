@@ -1,7 +1,7 @@
 	<nav class="ts-sidebar">
 			<ul class="ts-sidebar-menu">
 			
-			<li class="ts-label">Main</li>
+			<li class="ts-label">VIMA</li>
 			<li><a href="profile.php"><i class="fa fa-user"></i> &nbsp;Profile</a>
 			</li>
 			<li><a href="manage.php"><i class="fa fa-user"></i> &nbsp;View Records</a>

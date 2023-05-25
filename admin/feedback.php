@@ -7,40 +7,6 @@ if(strlen($_SESSION['alogin'])==0)
 header('location:index.php');
 }
 else{
-if(isset($_GET['del']))
-{
-$id=$_GET['del'];
-$sql = "delete from users WHERE id=:id";
-$query = $dbh->prepare($sql);
-$query -> bindParam(':id',$id, PDO::PARAM_STR);
-$query -> execute();
-$msg="Data Deleted successfully";
-}
-
-if(isset($_REQUEST['unconfirm']))
-	{
-	$aeid=intval($_GET['unconfirm']);
-	$memstatus=1;
-	$sql = "UPDATE users SET status=:status WHERE  id=:aeid";
-	$query = $dbh->prepare($sql);
-	$query -> bindParam(':status',$memstatus, PDO::PARAM_STR);
-	$query-> bindParam(':aeid',$aeid, PDO::PARAM_STR);
-	$query -> execute();
-	$msg="Changes Sucessfully";
-	}
-
-	if(isset($_REQUEST['confirm']))
-	{
-	$aeid=intval($_GET['confirm']);
-	$memstatus=0;
-	$sql = "UPDATE users SET status=:status WHERE  id=:aeid";
-	$query = $dbh->prepare($sql);
-	$query -> bindParam(':status',$memstatus, PDO::PARAM_STR);
-	$query-> bindParam(':aeid',$aeid, PDO::PARAM_STR);
-	$query -> execute();
-	$msg="Changes Sucessfully";
-	}
-
 
 
 
@@ -134,7 +100,7 @@ if(isset($_REQUEST['unconfirm']))
 
 <?php 
 $reciver = 'Admin';
-$sql = "SELECT * from  feedback where reciver = (:reciver)";
+$sql = "SELECT * from  feedback where reciver = (:reciver) ORDER BY creationDate DESC";
 $query = $dbh -> prepare($sql);
 $query-> bindParam(':reciver', $reciver, PDO::PARAM_STR);
 $query->execute();

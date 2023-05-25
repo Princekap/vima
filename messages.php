@@ -94,7 +94,7 @@ else{
 
 <?php 
 $reciver = $_SESSION['alogin'];
-$sql = "SELECT * from  feedback where reciver = (:reciver)";
+$sql = "SELECT * from  feedback where reciver = (:reciver) ORDER BY creationDate DESC";
 $query = $dbh -> prepare($sql);
 $query-> bindParam(':reciver', $reciver, PDO::PARAM_STR);
 $query->execute();
